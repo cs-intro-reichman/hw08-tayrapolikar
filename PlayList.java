@@ -45,7 +45,7 @@ class PlayList {
      * Otherwise, appends the track and returns true.
      */
     public boolean add(Track track) {
-        if (size < maxSize) { // there is space
+        if (size < maxSize) {
             tracks[size++] = track;
             return true;
         } else {
@@ -57,7 +57,7 @@ class PlayList {
      * Returns the data of this list, as a string. Each track appears in a separate line.
      */
     //// For an efficient implementation, use StringBuilder.
-    public String toString() {
+    public String toString() { // not sure ?
         StringBuilder stringBuilder = new StringBuilder();
 
         for (int i = 0; i < size; i++) {
@@ -98,7 +98,7 @@ class PlayList {
         String lowercaseTitle = title.toLowerCase();
 
         for (int i = 0; i < size; i++) {
-            String trackTitle = tracks[i].getTitle().toLowerCase(); 
+            String trackTitle = tracks[i].getTitle().toLowerCase();
             if (trackTitle.equals(lowercaseTitle)) {
                 return i;
             }
@@ -185,7 +185,7 @@ class PlayList {
      */
     private int minIndex(int start) {
         if (start < 0 || start >= size) {
-            return -1; // Invalid start index
+            return -1;
         }
 
         int minIndex = start;
